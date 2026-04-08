@@ -68,3 +68,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Core Logic
+Auto-Initialize: Detects current system date and loads the corresponding month/year.
+Visual Shuffle: Randomly selects a landscape background from a 14-image pool on every reload and month change.
+Contextual Storage: Automatically switches localStorage keys based on selection:
+No Date Selected: Loads/Saves "General Monthly Notes."
+Date Selected: Loads/Saves "Specific Daily Notes."
+
+2. User Interaction
+Navigation: Arrows shift viewDate and reset any active selection to ensure clean transitions.
+
+Selection Toggle:
+1st Click: Selects start date.
+2nd Click (New Date): Creates a range highlight.
+2nd Click (Same Date): Releases (deselects) the date, acting as a toggle.
+
+3. Responsive Layout
+Desktop: Side-by-side grid (1fr 2fr) maintaining a traditional "planner" spatial arrangement.
+Mobile: Stacks vertically at 850px; Notes move below the Calendar so the keyboard doesn't hide the dates while typing.
+
+4. Design Specs
+Aesthetic: Wall-mount "paper" effect with high-res photography and a clipped hero image.
+Precision: Notes area is locked to 216px (9 lines at 24px each) to ensure text perfectly aligns with the background lines.
